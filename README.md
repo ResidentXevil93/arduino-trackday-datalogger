@@ -36,6 +36,19 @@ Este proyecto recopila datos de vehículos de pista utilizando:
 | Presión de freno       | A1          |
 | Amortiguador trasero R | A2          |
 | (otros sensores)       | A3–A5       |
+[ VEHÍCULO ]
+   │
+[ OBD2 ]
+   ├── Pin 6 (CAN H) ──┐
+   ├── Pin 14 (CAN L) ─┘──> MCP2515 → Arduino
+   └── Pin 16 (12V) ──> Step-down → Arduino 5V
+              └── Pin 4 (GND) ─────→ Arduino GND
+
+[ SENSORES A1–A5 ] ──> Arduino A1–A5
+
+[ MPU6050 ] ── SDA/SCL → Arduino I2C
+
+[ Arduino ] ──> Serial (USB) → PC → WinTax / Logger
 
 ---
 
